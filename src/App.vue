@@ -2,6 +2,8 @@
 // color
 // Properties from <!--<v-img v-bind="props" >-->
 // gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)"
+// Properties for v-app-bar
+// src="https://picsum.photos/1920/1080?random"
 <template>
   <v-app>
     <v-app-bar
@@ -9,10 +11,10 @@
       dark
       shrink-on-scroll
       prominent
-      src="https://picsum.photos/1920/1080?random"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-5"
       scroll-threshold="500"
+      gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)"
     >
       <div>
         <v-avatar size="150" elevation="3">
