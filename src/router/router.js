@@ -23,6 +23,16 @@ const routes = [
     path: '/our-work',
     name: 'our-work',
     component: OurWork
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: Logout
   }
 ]
 
