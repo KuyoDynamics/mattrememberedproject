@@ -1,5 +1,5 @@
 <template>
-    <p>Media</p>
+    <p>Media Manager</p>
 </template>
 <script>
 export default {

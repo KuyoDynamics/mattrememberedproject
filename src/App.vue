@@ -31,19 +31,20 @@
             About Matt
             <v-icon>mdi-account-box</v-icon>
           </v-tab>
-          <v-tab to="/posts">
-            Posts
-            <v-icon>mdi-post</v-icon>
-          </v-tab>
-          <v-tab to="/media">
-            Media Manager
-            <v-icon>mdi-folder-multiple-image</v-icon>
-          </v-tab>
-          <v-tab to="/users">
-            Users
-            <v-icon>mdi-account-group-outline</v-icon>
-          </v-tab>
-
+          <template id="admin-tabs" v-if="isAuthenticated">
+            <v-tab to="/posts">
+              Posts
+              <v-icon>mdi-post</v-icon>
+            </v-tab>
+            <v-tab to="/media">
+              Media Manager
+              <v-icon>mdi-folder-multiple-image</v-icon>
+            </v-tab>
+            <v-tab to="/users">
+              Users
+              <v-icon>mdi-account-group-outline</v-icon>
+            </v-tab>
+          </template>
         </v-tabs>
       </template>
       <v-spacer></v-spacer>
@@ -106,13 +107,26 @@ export default {
       items: [
         { title: "Home", icon: "mdi-home-city", route: "/" },
         { title: "Posts", icon: "mdi-post", route: "/posts" },
-        { title: "Media", icon: "mdi-folder-multiple-image", route: "/media-manager" },
+        {
+          title: "Media",
+          icon: "mdi-folder-multiple-image",
+          route: "/media-manager"
+        },
         { title: "My Account", icon: "mdi-account", route: "/accounts" },
         { title: "Users", icon: "mdi-account-group-outline", route: "/users" }
       ],
       drawer: false,
-      group: null
+      group: null,
+      user: {
+        role: 'admin',
+        loggedIn: false
+      }
     };
+  },
+  methods: {
+    isAuthenticated: () =>{
+      return this.user != null && this.user.role=='admin' && this.user.loggedIn==true
+    }
   },
   watch: {
     group() {
