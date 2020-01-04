@@ -8,7 +8,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <v-avatar size="124">
-          <img src="https://themattrememberedproject.s3.amazonaws.com/matt.jpg" alt="Matt" />
+          <img src="../assets/matt.jpg" alt="Matt" />
         </v-avatar>
         <v-spacer></v-spacer>
         <strong class="subheading">Contact Us</strong>
