@@ -6,6 +6,9 @@ import Login from '../views/Login'
 import Logout from '../views/Logout'
 import Posts from '../views/Posts'
 import Post from '../views/Post'
+import Media from '../views/Media'
+import Users from '../views/Users'
+import User from '../views/User'
 
 Vue.use(VueRouter)
 
@@ -47,6 +50,21 @@ const routes = [
     path: '/post',
     name: 'post',
     component: Post
+  },
+  {
+    path: '/media',
+    name: 'media',
+    component: Media
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: User
+  },
+  {
+    path: '/users',
+    name: 'users',
+    component: Users
   }
 ]
 

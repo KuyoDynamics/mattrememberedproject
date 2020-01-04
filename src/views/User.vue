@@ -1,8 +1,8 @@
 <template>
-    <p>Media</p>
+    <p>User</p>
 </template>
 <script>
 export default {
-    name: "media"
+    name: "user"
 }
 </script>
