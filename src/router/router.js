@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import OurWork from '../views/OurWork'
+import Login from '../views/Login'
+import Logout from '../views/Logout'
+import Posts from '../views/Posts'
+import Post from '../views/Post'
 
 Vue.use(VueRouter)
 
@@ -33,6 +37,16 @@ const routes = [
     path: '/logout',
     name: 'logout',
     component: Logout
+  },
+  {
+    path: '/posts',
+    name: 'posts',
+    component: Posts
+  },
+  {
+    path: '/post',
+    name: 'post',
+    component: Post
   }
 ]
 
