@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless absolute class="pa-0 text-center">
+  <v-footer dark padless absolute class="pa-0 text-center" app>
     <v-card class="flex" flat tile>
       <v-card-title class="teal">
         <strong class="subheading">Get connected with us on social networks!</strong>

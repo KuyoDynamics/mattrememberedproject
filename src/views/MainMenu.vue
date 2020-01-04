@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" absolute bottom temporary height="auto">
+  <v-navigation-drawer v-model="drawer" absolute bottom temporary height="auto" app>
     <template v-slot:prepend>
       <v-list-item two-line>
         <v-list-item-avatar>
