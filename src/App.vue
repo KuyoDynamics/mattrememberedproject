@@ -18,7 +18,7 @@
         <v-img v-bind="props"></v-img>
       </template>
       <template v-slot:extension>
-        <v-tabs centered slider-color="yellow" background-color="transparent">
+        <v-tabs centered slider-color="yellow" background-color="transparent" class="hidden-sm-and-down">
           <v-tab to="/">
             Home
             <v-icon>mdi-home</v-icon>
