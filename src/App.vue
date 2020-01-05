@@ -12,6 +12,7 @@
     >
       <v-avatar size="124">
         <img src="./assets/matt.jpg" alt="Matt" />
+        <!-- <v-icon dark x-large>mdi-account-group-outline</v-icon> -->
       </v-avatar>
 
       <v-toolbar-title>The Matt Remembered Project</v-toolbar-title>
