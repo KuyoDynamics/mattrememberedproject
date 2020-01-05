@@ -8,6 +8,7 @@
       scroll-threshold="500"
       app
       src="https://picsum.photos/1920/1080?random"
+      height="50"
     >
       <v-avatar size="124">
         <img src="./assets/matt.jpg" alt="Matt" />

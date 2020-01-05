@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <section class="blogs-section">
       <template>
-        <v-carousel>
+        <v-carousel height="400">
           <v-carousel-item
             v-for="(post,i) in blogPosts"
             :key="i"
@@ -15,7 +15,7 @@
       </template>
     </section>
 
-    <section class="services" >
+    <section class="services">
       <v-container fill-height>
         <v-layout row flex align-center justify-center>
           <v-card
@@ -33,7 +33,23 @@
         </v-layout>
       </v-container>
     </section>
-    <section class="partners"></section>
+    <section class="partners">
+      <v-card>
+        <v-card-title>Supported by</v-card-title>
+        <v-card-subtitle>Our partners that makes it all possible</v-card-subtitle>
+        <v-layout row>
+          <v-img
+            v-for="partner in partners"
+            v-bind:key="partner.id"
+            :src="partner.logo"
+            :alt="partner.name"
+            link
+            :href="partner.website"
+            target="_blank"
+          ></v-img>
+        </v-layout>
+      </v-card>
+    </section>
     <section class="achivements"></section>
     <section class="get-involved"></section>
   </main>
@@ -85,6 +101,20 @@ export default {
           title: "Sanitation",
           text:
             "We facilitate communities to construct latrines using locally available resources.These include batch and washing facilities."
+        }
+      ],
+      partners: [
+        {
+          id: 1,
+          logo: require('@/assets/warma-logo.png'),
+          name: "National Water Supply and Sanitation Council",
+          website: "http://www.nwasco.org.zm/"
+        },
+        {
+          id: 2,
+          logo: require('@/assets/zema-logo.png'),
+          name: "Zambia Environmental Management Agency",
+          website: "https://www.zema.org.zm/"
         }
       ]
     };
