@@ -1,3 +1,4 @@
+// src="https://picsum.photos/1920/1080?random"
 <template>
   <v-app>
     <v-app-bar
@@ -7,14 +8,13 @@
       shrink-on-scroll
       scroll-threshold="500"
       app
-      src="https://picsum.photos/1920/1080?random"
-      height="50"
+      src="./assets/water-body.jpg"
+      height="80"
     >
       <v-avatar size="124">
         <img src="./assets/matt.jpg" alt="Matt" />
         <!-- <v-icon dark x-large>mdi-account-group-outline</v-icon> -->
       </v-avatar>
-
       <v-toolbar-title>The Matt Remembered Project</v-toolbar-title>
       <template v-slot:img="{ props }">
         <v-img v-bind="props"></v-img>
@@ -65,7 +65,6 @@
             <v-list-item-subtitle>Logged In</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-        
       </template>
 
       <v-divider></v-divider>
@@ -87,7 +86,7 @@
       <template v-slot:append>
         <div class="pa-2">
           <!-- <v-btn block @click="$router.push('logout')" v-if="loggedIn">Logout</v-btn> -->
-          <v-btn block @click="logout" v-if="loggedIn">Logout</v-btn> 
+          <v-btn block @click="logout" v-if="loggedIn">Logout</v-btn>
           <v-btn block @click="login" v-if="!loggedIn">Login</v-btn>
         </div>
       </template>
@@ -107,7 +106,7 @@ export default {
   components: {
     Footer
   },
-  data: function(){
+  data: function() {
     return {
       items: [
         { title: "Home", icon: "mdi-home-city", route: "/", protected: false },
@@ -143,7 +142,7 @@ export default {
           protected: true
         }
       ],
-      loggedIn: true,
+      loggedIn: false,
       drawer: false,
       group: null,
       user: {
@@ -159,19 +158,19 @@ export default {
     //     this.user.loggedIn == true
     //   );
     // },
-    logout: function(){
-      this.loggedIn=false;
+    logout: function() {
+      this.loggedIn = false;
       return this.loggedIn;
     },
-    login: function(){
-      this.loggedIn=true;
+    login: function() {
+      this.loggedIn = true;
       return this.loggedIn;
     }
   },
   computed: {
-    filteredItems(){
-      var filtered = this.items.filter(el=>{
-        return (this.loggedIn || !el.protected);        
+    filteredItems() {
+      var filtered = this.items.filter(el => {
+        return this.loggedIn || !el.protected;
       });
       return filtered;
     }

@@ -1,5 +1,5 @@
 <template>
-    <p>Posts</p>
+    <h1>Manage Posts Here</h1>
 </template>
 <script>
 export default {

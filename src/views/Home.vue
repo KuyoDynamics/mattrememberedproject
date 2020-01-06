@@ -10,7 +10,18 @@
             :src="post.src"
             reverse-transition="fade-transition"
             transition="fade-transition"
-          ></v-carousel-item>
+          >
+            <v-layout row class="my-5" flex justify-center>
+                <v-card flat color="transparent"  max-width="500" wrap>
+                  <v-card-title>{{post.title}}</v-card-title>
+                  <v-card-subtitle>{{post.subtitle}}</v-card-subtitle>
+                  <v-card-text>{{post.text}}</v-card-text>
+                  <v-card-actions>
+                    <v-btn rounded>Read more</v-btn>
+                  </v-card-actions>
+                </v-card>
+            </v-layout>
+          </v-carousel-item>
         </v-carousel>
       </template>
     </section>
@@ -23,16 +34,7 @@
             max-width="200"
             v-for="service in services"
             v-bind:key="service.id"
-           
           >
-            <v-btn
-              fab
-              color="cyan accent-2"
-              top
-              absolute
-            >
-              <v-icon>mdi-plus</v-icon>
-            </v-btn>
             <v-card-title class="justify-center">{{service.title}}</v-card-title>
 
             <v-card-text class="text--primary justify-center">
@@ -50,14 +52,15 @@
           <v-card
             flat
             color="transparent"
-            max-width="150"
+            width="150"
+            height="150"
             v-for="achievement in achievements"
             v-bind:key="achievement.id"
           >
-            <v-avatar size="186" class="my-3">
+            <v-card-title>
               <v-icon dark x-large>{{achievement.icon}}</v-icon>
-            </v-avatar>
-            <v-card-title class="justify-center">{{achievement.value}}</v-card-title>
+              {{achievement.value}}
+            </v-card-title>
             <v-card-text class="text--primary justify-center">
               <p>{{achievement.description}}</p>
             </v-card-text>
@@ -90,12 +93,15 @@
         <v-card-title class="justify-center">Get Involved</v-card-title>
         <v-card-subtitle class="text-center">Make Your Donation</v-card-subtitle>
         <v-card-actions class="justify-center">
-          <v-btn  text icon class="justify-center">
-            <v-icon>mdi-patreon</v-icon>
-            Patreon
-            </v-btn>
-          <v-btn text icon class="justify-center"><v-icon>mdi-credit-card</v-icon>Visa</v-btn>
-          <v-btn  text icon class="justify-center"><v-icon>mdi-paypal</v-icon>Paypal</v-btn>
+          <v-btn text icon class="justify-center">
+            <v-icon>mdi-patreon</v-icon>Patreon
+          </v-btn>
+          <v-btn text icon class="justify-center">
+            <v-icon>mdi-credit-card</v-icon>Visa
+          </v-btn>
+          <v-btn text icon class="justify-center">
+            <v-icon>mdi-paypal</v-icon>Paypal
+          </v-btn>
         </v-card-actions>
       </v-card>
     </section>
@@ -103,21 +109,38 @@
 </template>
 <script>
 export default {
+  // src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
   name: "Home",
   data() {
     return {
       blogPosts: [
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+          src: require("@/assets/water-zambia.png"),
+          title: "Clean Water",
+          subtitle: "is essential to all life",
+          text:
+            "We provide boreholes and install water pumps in Zambia. Since 2016, we have served over 25000 with safe drinking water"
         },
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+          src: require("@/assets/water-zambia.png"),
+          title: "Rural Livelihood",
+          subtitle: "no human life derserves to live on an empty stomach",
+          text:
+            "Through water services and short loans, we help local farmers grow food."
         },
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+          src: require("@/assets/water-zambia.png"),
+          title: "Hygiene",
+          subtitle: "is essential to all life",
+          text:
+            "We help communities adopt hygiene practices that protect water sources from being contaminated"
         },
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+          src: require("@/assets/water-zambia.png"),
+          title: "Sanitation",
+          subtitle: "clean living environment for all",
+          text:
+            "Our water services help prevent human contact with feces and promotes hand washing with soap"
         }
       ],
       services: [
@@ -168,20 +191,20 @@ export default {
         {
           id: 1,
           value: "10,000",
-          description: "People helped to safe water",
+          description: "People helped with safe water",
           icon: "mdi-account-group-outline"
         },
         {
           id: 2,
-          value: "520",
+          value: "600",
           description: "Boreholes Drilled",
           icon: "mdi-water-pump"
         },
         {
           id: 3,
-          value: "400",
+          value: "350",
           description: "Hand Dug Wells",
-          icon: "mdi-account-group-outline"
+          icon: "mdi-spade"
         }
       ]
     };
