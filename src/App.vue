@@ -2,7 +2,6 @@
 <template>
   <v-app>
     <v-app-bar
-      color="red"
       dark
       prominent
       shrink-on-scroll
