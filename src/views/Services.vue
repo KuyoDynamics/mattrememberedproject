@@ -1,11 +1,16 @@
 <template>
   <v-container fill-height>
     <v-layout row flex align-center justify-center>
-      <v-card class="mx-5 my-5" max-width="200" v-for="service in services" v-bind:key="service.id">
-        <v-card-title class="justify-center">{{service.title}}</v-card-title>
+      <v-card
+        class="mx-5 my-5"
+        max-width="200"
+        v-for="service in services"
+        v-bind:key="service.id"
+      >
+        <v-card-title class="justify-center">{{ service.title }}</v-card-title>
 
         <v-card-text class="text--primary justify-center">
-          <p>{{service.text}}</p>
+          <p>{{ service.text }}</p>
         </v-card-text>
       </v-card>
     </v-layout>

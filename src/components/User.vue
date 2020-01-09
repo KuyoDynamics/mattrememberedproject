@@ -1,8 +1,8 @@
 <template>
-    <p>User</p>
+  <p>User</p>
 </template>
 <script>
 export default {
-    name: "user"
-}
+  name: "user"
+};
 </script>

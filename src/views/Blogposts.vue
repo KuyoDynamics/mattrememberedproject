@@ -1,7 +1,7 @@
- <template>
+<template>
   <v-carousel height="400">
     <v-carousel-item
-      v-for="(post,i) in blogPosts"
+      v-for="(post, i) in blogPosts"
       :key="i"
       :src="post.src"
       reverse-transition="fade-transition"
@@ -9,9 +9,9 @@
     >
       <v-layout row class="my-5" flex justify-center>
         <v-card flat color="transparent" max-width="500" wrap>
-          <v-card-title>{{post.title}}</v-card-title>
-          <v-card-subtitle>{{post.subtitle}}</v-card-subtitle>
-          <v-card-text>{{post.text}}</v-card-text>
+          <v-card-title>{{ post.title }}</v-card-title>
+          <v-card-subtitle>{{ post.subtitle }}</v-card-subtitle>
+          <v-card-text>{{ post.text }}</v-card-text>
           <v-card-actions>
             <v-btn rounded>Read more</v-btn>
           </v-card-actions>

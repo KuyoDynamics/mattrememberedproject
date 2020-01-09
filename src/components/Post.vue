@@ -1,8 +1,8 @@
 <template>
-    <p>Post</p>
+  <p>Post</p>
 </template>
 <script>
 export default {
-    name: "post"
-}
+  name: "post"
+};
 </script>

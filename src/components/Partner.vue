@@ -1,10 +1,12 @@
 <template>
   <v-card flat color="grey lighten-3" align-center justify-center class="py-5">
     <v-card-title class="justify-center">Supported by</v-card-title>
-    <v-card-subtitle class="text-center">Our partners that make it all possible</v-card-subtitle>
+    <v-card-subtitle class="text-center"
+      >Our partners that make it all possible</v-card-subtitle
+    >
     <v-layout row flex align-center justify-center>
       <v-img
-        :aspect-ratio="16/9"
+        :aspect-ratio="16 / 9"
         max-height="150"
         max-width="150"
         v-for="partner in partners"

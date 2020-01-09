@@ -1,7 +1,9 @@
 <template>
   <v-card flat align-center justify-center class="py-5" color="blue lighten-3">
     <v-card-title class="justify-center">Our Achievements</v-card-title>
-    <v-card-subtitle class="text-center">It always seems impossible until it’s done</v-card-subtitle>
+    <v-card-subtitle class="text-center"
+      >It always seems impossible until it’s done</v-card-subtitle
+    >
     <v-layout row flex align-center justify-center>
       <v-card
         flat
@@ -12,11 +14,11 @@
         v-bind:key="achievement.id"
       >
         <v-card-title>
-          <v-icon dark x-large>{{achievement.icon}}</v-icon>
-          {{achievement.value}}
+          <v-icon dark x-large>{{ achievement.icon }}</v-icon>
+          {{ achievement.value }}
         </v-card-title>
         <v-card-text class="text--primary justify-center">
-          <p>{{achievement.description}}</p>
+          <p>{{ achievement.description }}</p>
         </v-card-text>
       </v-card>
     </v-layout>

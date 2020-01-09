@@ -1,8 +1,8 @@
 <template>
-    <p>Logout</p>
+  <p>Logout</p>
 </template>
 <script>
 export default {
-    name: "logout"
-}
+  name: "logout"
+};
 </script>

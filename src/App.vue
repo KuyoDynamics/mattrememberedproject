@@ -18,7 +18,12 @@
         <v-img v-bind="props"></v-img>
       </template>
       <template v-slot:extension>
-        <v-tabs centered slider-color="yellow" background-color="transparent" class="hidden-sm-and-down">
+        <v-tabs
+          centered
+          slider-color="yellow"
+          background-color="transparent"
+          class="hidden-sm-and-down"
+        >
           <v-tab to="/">
             Home
             <v-icon>mdi-home</v-icon>
@@ -48,10 +53,22 @@
         </v-tabs>
       </template>
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon fixed right top @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        fixed
+        right
+        top
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer dark v-model="drawer" right temporary height="auto" app>
+    <v-navigation-drawer
+      dark
+      v-model="drawer"
+      right
+      temporary
+      height="auto"
+      app
+    >
       <template v-slot:prepend>
         <v-list-item two-line v-if="loggedIn">
           <v-list-item-avatar>
@@ -68,8 +85,16 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
-          <v-list-item v-for="item in filteredItems" :key="item.title" link :to="item.route">
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item
+            v-for="item in filteredItems"
+            :key="item.title"
+            link
+            :to="item.route"
+          >
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
@@ -165,9 +190,7 @@ export default {
       return filtered;
     }
   },
-  mounted: {
-
-  },
+  mounted: {},
   watch: {
     group() {
       this.drawer = false;

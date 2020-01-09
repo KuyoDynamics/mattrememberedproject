@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="blog-posts">
-     <blog-post></blog-post>
+      <blog-post></blog-post>
     </section>
     <section class="services">
       <service></service>
@@ -21,9 +21,7 @@
 export default {
   name: "Home",
   data() {
-    return {
-    };
+    return {};
   }
 };
 </script>
-
