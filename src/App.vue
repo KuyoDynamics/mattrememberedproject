@@ -12,7 +12,6 @@
     >
       <v-avatar size="124">
         <img src="./assets/matt.jpg" alt="Matt" />
-        <!-- <v-icon dark x-large>mdi-account-group-outline</v-icon> -->
       </v-avatar>
       <v-toolbar-title>The Matt Remembered Project</v-toolbar-title>
       <template v-slot:img="{ props }">
@@ -84,7 +83,6 @@
 
       <template v-slot:append>
         <div class="pa-2">
-          <!-- <v-btn block @click="$router.push('logout')" v-if="loggedIn">Logout</v-btn> -->
           <v-btn block @click="logout" v-if="loggedIn">Logout</v-btn>
           <v-btn block @click="login" v-if="!loggedIn">Login</v-btn>
         </div>
@@ -99,7 +97,7 @@
 </template>
 
 <script>
-import Footer from "./views/Footer";
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
@@ -150,13 +148,6 @@ export default {
     };
   },
   methods: {
-    // isAuthenticated: () => {
-    //   return (
-    //     this.user != null &&
-    //     this.user.role == "admin" &&
-    //     this.user.loggedIn == true
-    //   );
-    // },
     logout: function() {
       this.loggedIn = false;
       return this.loggedIn;
@@ -173,6 +164,9 @@ export default {
       });
       return filtered;
     }
+  },
+  mounted: {
+
   },
   watch: {
     group() {
