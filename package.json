@@ -19,6 +19,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "devstart": " cd client && npm run build && cd .. && npm run start",
+    "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
