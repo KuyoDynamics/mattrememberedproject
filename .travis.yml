@@ -20,6 +20,7 @@ install:
 - chmod +x node_modules/.bin/*
 script:
 - npm run build
+before_deploy:
 deploy:
   skip_cleanup: true
   provider: heroku

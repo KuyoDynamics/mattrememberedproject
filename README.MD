@@ -44,3 +44,15 @@ For the ones hosted at travis-ci.com:
 travis encrypt pasteAPIKeyHere --add deploy.api_key --pro
 For the ones hosted at travis-ci.org:
 travis encrypt pasteAPIKeyHere --add deploy.api_key --org
+
+2. Check deployed files
+Use the following commands:
+```
+heroku login
+heroku run bash -a mattrememberedproject
+$ ls
+```
+When you finish your commands and want to return to your terminal, run :
+```
+$ exit
+```
