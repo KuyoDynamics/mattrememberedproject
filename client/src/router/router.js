@@ -9,6 +9,7 @@ import Post from "../components/Post";
 import Media from "../views/MediaManager";
 import Users from "../views/Users";
 import User from "../components/User";
+import About from "../views/About";
 
 Vue.use(VueRouter);
 
@@ -21,11 +22,7 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: About
   },
   {
     path: "/our-work",
@@ -71,8 +68,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
-  base:
-    process.env.NODE_ENV === "production" ? "../public/" : process.env.BASE_URL,
+  base: process.env.NODE_ENV === "production" ? "/" : process.env.BASE_URL,
   routes
 });
 
