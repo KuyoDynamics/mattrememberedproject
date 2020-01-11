@@ -23,6 +23,11 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### To inspect webpack's config for vuejs app
+```
+vue inspect output.js
+```
+
 ### Troubleshooting
 1. Travis CI
 If you get the error as below:
