@@ -1,7 +1,7 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
   publicPath: process.env.NODE_ENV === "production" ? "../public/" : "/",
-  outputDir: process.env.NODE_ENV === "production" ? "../public/dist/" : "dist"
+  outputDir: process.env.NODE_ENV === "production" ? "../public/" : "dist"
 };
 
 // customize it so when you want to test as a standalone vuejs,
