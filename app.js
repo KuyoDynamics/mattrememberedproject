@@ -18,14 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/dist')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 // app.get(/.*/, (req, res) => {
 //   console.log('passed here first');
 //   res.sendFile(__dirname + '/public/index.html');
 // });
 
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
