@@ -14,12 +14,12 @@ cache:
   - "~/client/.cache"
   - "./client/node_modules"
 
-override:
+# override:
 # install packages in client for testing and building
-- cd client && npm ci
-- cd client && npm run cy:verify
-- cd ..
-- npm ci
+# - cd client && npm ci
+# - cd client && npm run cy:verify
+# - cd ..
+# - npm ci
 install:
 - npm ci
 # - chmod +x node_modules/.bin/*
@@ -27,10 +27,10 @@ install:
 - cd client && npm ci
 - chmod +x node_modules/.bin/*
 script:
-- cd ..
-- npm run build
+# - cd ..
+# - npm run build
 # Build artifacts for client
-- cd client && npm run build
+- npm run build
 - cd ..
 before_deploy:
 # Exclude the client folder from the deploy bundle
