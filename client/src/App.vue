@@ -190,7 +190,6 @@ export default {
       return filtered;
     }
   },
-  mounted: {},
   watch: {
     group() {
       this.drawer = false;
