@@ -34,9 +34,9 @@ script:
 - cd ..
 before_deploy:
 # Exclude the client folder from the deploy bundle
-- rm client
-- rm docs
-- rm README.MD
+- sudo rm -rfv client
+- sudo rm -rfv docs
+- sudo rm -fv README.MD
 deploy:
   skip_cleanup: true
   provider: heroku
