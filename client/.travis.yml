@@ -14,12 +14,21 @@ cache:
   - "~/.cache"
 override:
 - npm ci
-- npm run cy:verify
+# - npm run cy:verify
 install:
+# install in client folder
+- cd client && npm install
 - npm ci
 - chmod +x node_modules/.bin/*
 script:
+# cd into client and build client app to public folder
+- cd client && npm run build
+# build the server  
 - npm run build
+before_deploy:
+  - rm client
+  - rm docs
+  - rm README.MD
 deploy:
   skip_cleanup: true
   provider: heroku

@@ -56,3 +56,9 @@ When you finish your commands and want to return to your terminal, run :
 ```
 $ exit
 ```
+
+3. Recover deleted file
+If you want to recover deleted file, use:
+```
+git checkout HEAD^ server.js
+```
