@@ -21,7 +21,7 @@ override:
 - cd client && npm run cy:verify
 install:
 - npm ci
-- chmod +x node_modules/.bin/*
+# - chmod +x node_modules/.bin/*
 # Do same for the client
 - cd client && npm ci
 - chmod +x node_modules/.bin/*
