@@ -11,16 +11,29 @@ cache:
   directories:
   - "~/.cache"
   - "./node_modules"
-  - "~/.cache"
+  - "~/client/.cache"
+  - "./client/node_modules"
+
 override:
 - npm ci
-- npm run cy:verify
+# install packages in client for testing and building
+- cd client && npm ci
+- cd client && npm run cy:verify
 install:
 - npm ci
 - chmod +x node_modules/.bin/*
+# Do same for the client
+- cd client && npm ci
+- chmod +x node_modules/.bin/*
 script:
 - npm run build
+# Build artifacts for client
+- cd client && npm run build
 before_deploy:
+# Exclude the client folder from the deploy bundle
+- rm client
+- rm docs
+- rm README.MD
 deploy:
   skip_cleanup: true
   provider: heroku
