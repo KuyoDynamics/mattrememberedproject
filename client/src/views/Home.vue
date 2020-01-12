@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <v-container fluid class="mx-0 pa-0">
     <section class="blog-posts">
       <blog-post></blog-post>
     </section>
@@ -15,7 +15,7 @@
     <section class="get-involved">
       <donation></donation>
     </section>
-  </main>
+  </v-container>
 </template>
 <script>
 export default {

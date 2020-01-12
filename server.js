@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 // const dotenv = require('dotenv');
 // const mongoose = require('mongoose');
 // const chalk = require('chalk');
 const bodyParser = require('body-parser');
-// const path = require('path');
+const path = require('path');
 const morgan = require('morgan');
 // const strings = require('../helpers/strings');
 // const app_name = require('../../package.json').name;
@@ -13,8 +14,26 @@ global.app = express();
 // mongoose.set('useCreateIndex', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 // app.use(express.static(path.join(__dirname, '../../public')));
-app.use(express.static('public'));
+var public = path.join(__dirname, 'public');
+var options = {
+	dotfiles: 'ignore',
+	etag: false,
+	extensions: ['htm', 'html'],
+	index: false,
+	maxAge: '1d',
+	redirect: false,
+	setHeaders: function (res, path, stat) {
+	  res.set('x-timestamp', Date.now())
+	}
+  }
+
+  // Handle static folder
+app.use(express.static(path.join(__dirname, '/public/')));
+// Handle SPA
+app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+// app.use(express.static(path.join(__dirname, 'public'), options));
 app.use(morgan('common'));
 //Set req.user to null for each server request
 // app.use('*', function (req, res, next) {
