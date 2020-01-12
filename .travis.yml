@@ -34,7 +34,7 @@ script:
 - cd ..
 before_deploy:
 # Exclude the client folder from the deploy bundle
-- sudo rm -rfv client
+- sudo rm -rf client
 - sudo rm -rfv docs
 - sudo rm -fv README.MD
 deploy:
